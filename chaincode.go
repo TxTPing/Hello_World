@@ -91,7 +91,7 @@ value = args[1]
 chaincodeName := "github.com/TxTPing/Hello_World2"
  
 if args[1] == "drop"{
-response = stub.InvokeChaincode(chaincodeName, "", "")
+response = stub.InvokeChaincode(chaincodeName, "")
 }else{
 err = stub.PutState(key, []byte(value)) //write the variable into the chaincode state
 }
