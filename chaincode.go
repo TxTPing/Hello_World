@@ -81,6 +81,7 @@ return nil, errors.New("Received unknown function query: " + function)
 // write - invoke function to write key/value pair
 func (t *SimpleChaincode) write(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 var key, value string
+var channelname string
 var err error
 fmt.Println("running write()")
 
@@ -93,7 +94,7 @@ value = args[1]
 
 
 f := "query"
-writeArgs := util.ToChaincodeArgs(f, "stock value")
+writeArgs := util.ToChaincodeArgs(f, "stock value", channelname)
 
 chaincodeName := "github.com/TxTPing/Hello_World2"
  
