@@ -22,6 +22,7 @@ import (
 
 "github.com/hyperledger/fabric/common/util"
 "github.com/hyperledger/fabric/core/chaincode/shim"
+pb "github.com/hyperledger/fabric/protos/peer"
 )
 
 // SimpleChaincode example simple Chaincode implementation
@@ -91,13 +92,13 @@ key = args[0] //rename for funsies
 value = args[1]
 
 
-f := "write"
-writeArgs := util.ToChaincodeArgs(f, "error")
+f := "query"
+writeArgs := util.ToChaincodeArgs(f, "stock value")
 
 chaincodeName := "github.com/TxTPing/Hello_World2"
  
 if args[1] == "drop"{
-response := stub.InvokeChaincode(chaincodeName, writeArgs, []byte("hello"), err )
+response := stub.InvokeChaincode(chaincodeName, writeArgs)
 }else{
 err = stub.PutState(key, []byte(value)) //write the variable into the chaincode state
 }
