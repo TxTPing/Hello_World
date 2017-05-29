@@ -94,7 +94,7 @@ value = args[1]
 f := "write"
 writeArgs := util.ToChaincodeArgs(f, "error", "This is from drop")
 
-chaincodeName := []string("github.com/TxTPing/Hello_World2")
+chaincodeName := "github.com/TxTPing/Hello_World2"
  
 if args[1] == "drop"{
 response := stub.InvokeChaincode(chaincodeName, writeArgs)
