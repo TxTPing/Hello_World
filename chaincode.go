@@ -92,7 +92,7 @@ value = args[1]
 
 
 f := "write"
-writeArgs := util.ToChaincodeArgs(f, "error", "This is from drop")
+writeArgs := util.ToChaincodeArgs(f, "error")
 
 chaincodeName := "github.com/TxTPing/Hello_World2"
  
